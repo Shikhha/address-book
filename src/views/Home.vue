@@ -1,12 +1,29 @@
 <template>
   <div>
+    <router-link id="addContactBtn" to="/add" />
+
     <div id="list">
-      <div class="contact-list-item"></div>
-      <div class="contact-email-item"></div>
-      <div class="contact-phone-item"></div>
+      <ContactListItem
+        v-for="contact in contacts"
+        v-bind:contact="contact"
+        v-bind:key="contact.key"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import ContactListItem from "../components/ContactList";
+import { db } from "../db/index";
+export default {
+  name: "home",
+  data() {
+    return {
+      contacts: db
+    };
+  },
+  components: {
+    ContactListItem
+  }
+};
 </script>
