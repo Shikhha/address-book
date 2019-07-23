@@ -1,29 +1,26 @@
-# ecom
+## Description
 
-## Project setup
-```
+Address book application in Vue.js
+
+## Installation
+
+To install
+
+```bash
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
+To Compile and hot-reload for development
+
+```bash
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Built With
 
-### Run your tests
-```
-npm run test
-```
+- Vue.js
+- CSS Grid
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Author
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Shikha Jhamb - [Shikhha](https://github.com/Shikhha)
