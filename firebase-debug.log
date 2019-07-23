@@ -1,0 +1,27 @@
+[debug] [2019-07-23T16:47:43.748Z] ----------------------------------------------------------------------
+[debug] [2019-07-23T16:47:43.751Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Bhuvain\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2019-07-23T16:47:43.751Z] CLI Version:   7.1.1
+[debug] [2019-07-23T16:47:43.751Z] Platform:      win32
+[debug] [2019-07-23T16:47:43.751Z] Node Version:  v12.2.0
+[debug] [2019-07-23T16:47:43.752Z] Time:          Tue Jul 23 2019 22:17:43 GMT+0530 (India Standard Time)
+[debug] [2019-07-23T16:47:43.752Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-23T16:47:43.764Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-23T16:47:43.765Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Bhuvain\Desktop\Coding\ecom
+
+[debug] [2019-07-23T16:51:57.877Z] Error: kill ENOSYS
+    at process.kill (internal/process/per_thread.js:188:13)
+    at process.listener (C:\Users\Bhuvain\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\signal-exit\index.js:95:15)
+    at process.emit (events.js:196:13)
+[error] 
+[error] Error: An unexpected error has occurred.
