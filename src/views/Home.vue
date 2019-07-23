@@ -5,10 +5,10 @@
 
     <div class="container" id="list">
       <ContactListItem
-      @getDetails= "getDetails(contact["key"])"
-      v-for="contact in contacts"
-      v-bind:contact="contact"
-      v-bind:key="contact.key"
+        @getDetails="getDetails(contact['key'])"
+        v-for="contact in contacts"
+        v-bind:contact="contact"
+        v-bind:key="contact.key"
       />
     </div>
   </div>
@@ -24,13 +24,20 @@ export default {
       contacts: []
     };
   },
+  methods: {
+    getDetails(key) {
+      this.$router.push("/detail/" + key);
+    }
+  },
   created() {
     fireStore
       .collection("contacts")
       .get()
       .then(snapshot => {
         snapshot.forEach(doc => {
-          this.contacts.push(doc.data());
+          let contact = doc.data();
+          contact["key"] = doc.id;
+          this.contacts.push(contact);
         });
       });
   },
