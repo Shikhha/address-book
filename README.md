@@ -19,7 +19,7 @@ npm run serve
 ## Built With
 
 - Vue.js
-- CSS Grid
+- Firebase
 
 ## Author
 
