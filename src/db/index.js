@@ -1,35 +1,15 @@
-const db = [{
-  key: 'f0a9ccaee18a',
-  name: 'Tobias Cefalu',
-  email: 'tobias@gmail.com',
-  phone: '9278908738',
-  address: '239, North Lane, Street 11, New York',
-  fbHandle: 'tobias.cef',
-  twitterHandle: 'tobias.cef',
-  instaHandle: '',
-  linkedinHandle: 'tobias.cef'
-}, {
-  key: '1047fb1e4cac',
-  name: 'Josh Julien',
-  email: 'josh@ecorp.com',
-  phone: '9217394928',
-  address: 'Apartment 20, Folk Street, Riverdale',
-  fbHandle: 'joshjulien88',
-  twitterHandle: '',
-  instaHandle: 'joshjulien88',
-  linkedinHandle: ''
-}, {
-  key: '204af9a2309e',
-  name: 'Hugo Haverland',
-  email: 'hugo@yahoo.ca',
-  phone: '9618291928',
-  address: '90, Homermill, Off Street 97, Toronto',
-  fbHandle: '',
-  twitterHandle: 'hugo_hl',
-  instaHandle: 'hugo_hl',
-  linkedinHandle: ''
-}];
+import vue from "vue";
+import Firebase from "firebase";
+import "firebase/firestore";
+const config = {
+  apiKey: "AIzaSyC2NtehlwBqQZXc7IADvxGCGpxYb8Hy9Wo",
+  authDomain: "address-book-vue.firebaseapp.com",
+  databaseURL: "https://address-book-vue.firebaseio.com",
+  projectId: "address-book-vue",
+  storageBucket: "",
+  messagingSenderId: "354536269381",
+  appId: "1:354536269381:web:f0bd0b335a466b61"
+};
+Firebase.initializeApp(config);
 
-export {
-	db
-}
+export default Firebase.firestore();

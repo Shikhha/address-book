@@ -12,6 +12,8 @@
     "firebase": "^6.3.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.7",
+    "vuefire": "^2.1.0",
+    "vuetify": "^1.5.5",
     "vuex": "^3.1.1"
   },
   "devDependencies": {
@@ -24,6 +26,10 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.6.10"
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "vue-cli-plugin-vuetify": "^0.5.0",
+    "vue-template-compiler": "^2.6.10",
+    "vuetify-loader": "^1.0.5"
   }
 }
