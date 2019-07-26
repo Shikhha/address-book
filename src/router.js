@@ -4,6 +4,7 @@ import Home from "./views/Home.vue";
 import About from "./views/About.vue";
 import AddContact from "./components/AddContact.vue";
 import ContactDetail from "./components/ContactDetail.vue";
+import UpdateContact from "./components/UpdateContact.vue";
 
 Vue.use(Router);
 
@@ -30,6 +31,12 @@ export default new Router({
       path: "/detail/:id",
       name: "contact-detail",
       component: ContactDetail,
+      props: true
+    },
+    {
+      path: "/update/:id",
+      name: "update",
+      component: UpdateContact,
       props: true
     }
   ]

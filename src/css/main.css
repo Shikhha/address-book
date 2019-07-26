@@ -4,7 +4,7 @@ body {
 }
 
 #addressbook-app {
-  height: 80vh;
+  height: 90vh;
   margin-top: 30px;
   background-color: #fafafa;
   border: 1px solid rgba(255, 0, 0, 0.3);

@@ -30,10 +30,10 @@ export default {
         .catch(function(error) {
           console.error("Error removing document: ", error);
         });
+    },
+    updateContact() {
+      this.$router.push("/update/" + this.id);
     }
-  },
-  updateContact() {
-    this.$router.push("/edit/" + this.id);
   }
 };
 </script>

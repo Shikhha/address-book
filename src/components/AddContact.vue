@@ -1,16 +1,42 @@
 <template>
   <div>
     <a href="#" v-on:click="save">save</a>
-    <div class="add-form">
-      <UserInput label="name" v-model="contact.name"></UserInput>
-      <UserInput label="e-mail" mode="texthalf" v-model="contact.email"></UserInput>
-      <UserInput label="phone" mode="texthalf" v-model="contact.phone"></UserInput>
-      <UserInput label="address" mode="textarea" v-model="contact.address"></UserInput>
-      <UserInput platform="fb" mode="social" v-model="contact.fbHandle"></UserInput>
-      <UserInput platform="insta" mode="social" v-model="contact.instaHandle"></UserInput>
-      <UserInput platform="twi" mode="social" v-model="contact.twitterHandle"></UserInput>
-      <UserInput platform="link" mode="social" v-model="contact.linkedHandle"></UserInput>
-    </div>
+    <button v-on:click="cancel">cancel</button>
+    <h2>Add</h2>
+    <form>
+      <div>
+        <label for="name">Name:</label>
+        <input class="form-control" type="text" id="name" v-model="contact.name" />
+      </div>
+      <div>
+        <label for="mail">Email:</label>
+        <input class="form-control" type="text" id="mail" v-model="contact.email" />
+      </div>
+      <div>
+        <label for="phone">Phone:</label>
+        <input class="form-control" type="text" id="phone" v-model="contact.phone" />
+      </div>
+      <div>
+        <label for="address">Address:</label>
+        <input class="form-control" type="text" id="address" v-model="contact.address" />
+      </div>
+      <div>
+        <label for="fb">Facebook:</label>
+        <input class="form-control" type="text" id="fb" v-model="contact.fbHandle" />
+      </div>
+      <div>
+        <label for="ig">Instagram:</label>
+        <input class="form-control" type="text" id="ig" v-model="contact.instaHandle" />
+      </div>
+      <div>
+        <label for="link">Linkedin:</label>
+        <input class="form-control" type="text" id="link" v-model="contact.linkedHandle" />
+      </div>
+      <div>
+        <label for="twi">Twitter:</label>
+        <input class="form-control" type="text" id="twi" v-model="contact.twitterHandle" />
+      </div>
+    </form>
   </div>
 </template>
 
@@ -53,6 +79,9 @@ export default {
         twitter: this.contact.twitterHandle
       });
       this.clearOut();
+      this.$router.push("/");
+    },
+    cancel() {
       this.$router.push("/");
     }
   },
