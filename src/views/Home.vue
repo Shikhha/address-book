@@ -1,14 +1,14 @@
-    
-<template>
+ <template>
   <div>
     <router-link id="addContactBtn" to="/add" />
-
     <div class="container" id="list">
       <ContactListItem
-        @getDetails="getDetails(contact['key'])"
+        @getDetails="getDetails(contact['id'])"
+        @deleteContact="deleteContact(contact['id'])"
         v-for="contact in contacts"
         v-bind:contact="contact"
-        v-bind:key="contact.key"
+        v-bind:id="contact['id']"
+        v-bind:key="contact.id"
       />
     </div>
   </div>
@@ -21,7 +21,8 @@ export default {
   name: "home",
   data() {
     return {
-      contacts: []
+      contacts: [],
+      id: ""
     };
   },
   methods: {
@@ -30,16 +31,13 @@ export default {
     }
   },
   created() {
-    fireStore
-      .collection("contacts")
-      .get()
-      .then(snapshot => {
-        snapshot.forEach(doc => {
-          let contact = doc.data();
-          contact["key"] = doc.id;
-          this.contacts.push(contact);
-        });
+    fireStore.collection("contacts").onSnapshot(snap => {
+      let temp = [];
+      snap.forEach(doc => {
+        temp.push({ id: doc.id, ...doc.data() });
       });
+      this.contacts = [...temp];
+    });
   },
   components: {
     ContactListItem

@@ -14,17 +14,18 @@
 import firestore from "../db/index";
 export default {
   name: "contact-detail",
-  props: ["id"],
   data() {
     return {
       contact: {}
     };
   },
   created() {
-    let ref = firestore.collection("contacts").doc(this.id);
-    ref.get().then(doc => {
-      this.contact = doc.data();
-    });
+    firestore
+      .collection("contacts")
+      .doc(this.$route.params.id)
+      .onSnapshot(doc => {
+        this.contact = doc.data();
+      });
   }
 };
 </script>
