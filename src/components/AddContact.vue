@@ -1,47 +1,74 @@
 <template>
-  <div>
-    <a href="#" v-on:click="save">save</a>
-    <button v-on:click="cancel">cancel</button>
-    <h2>Add</h2>
-    <form>
-      <div>
-        <label for="name">Name:</label>
-        <input class="form-control" type="text" id="name" v-model="contact.name" />
-      </div>
-      <div>
-        <label for="mail">Email:</label>
-        <input class="form-control" type="text" id="mail" v-model="contact.email" />
-      </div>
-      <div>
-        <label for="phone">Phone:</label>
-        <input class="form-control" type="text" id="phone" v-model="contact.phone" />
-      </div>
-      <div>
-        <label for="address">Address:</label>
-        <input class="form-control" type="text" id="address" v-model="contact.address" />
-      </div>
-      <div>
-        <label for="fb">Facebook:</label>
-        <input class="form-control" type="text" id="fb" v-model="contact.fbHandle" />
-      </div>
-      <div>
-        <label for="ig">Instagram:</label>
-        <input class="form-control" type="text" id="ig" v-model="contact.instaHandle" />
-      </div>
-      <div>
-        <label for="link">Linkedin:</label>
-        <input class="form-control" type="text" id="link" v-model="contact.linkedHandle" />
-      </div>
-      <div>
-        <label for="twi">Twitter:</label>
-        <input class="form-control" type="text" id="twi" v-model="contact.twitterHandle" />
-      </div>
-    </form>
+  <div class="add-contact">
+    <a href="#" v-on:click="save" class="ion">
+      <i class="material-icons">get_app</i>
+    </a>
+    <button v-on:click="cancel" class="ion">
+      <i class="material-icons">highlight_off</i>
+    </button>
+
+    <div class="container-add">
+      <form class="add-form">
+        <div class="form-div">
+          <input
+            placeholder="Name..."
+            class="form-control"
+            type="text"
+            id="name"
+            v-model="contact.name"
+          />
+        </div>
+        <div class="form-div">
+          <input
+            placeholder="Email..."
+            class="form-control"
+            type="text"
+            id="mail"
+            v-model="contact.email"
+          />
+        </div>
+        <div class="form-div">
+          <input
+            placeholder="Phone..."
+            class="form-control"
+            type="text"
+            id="phone"
+            v-model="contact.phone"
+          />
+        </div>
+        <div class="form-div-address">
+          <input
+            placeholder="Address..."
+            class="form-control"
+            type="text"
+            id="address"
+            v-model="contact.address"
+          />
+        </div>
+        <div class="social">
+          <div class="social-div">
+            <button class="icon fbico"></button>
+            <input class="form-control" type="text" id="fb" v-model="contact.fbHandle" />
+          </div>
+          <div class="social-div">
+            <button class="icon instaico"></button>
+            <input class="form-control" type="text" id="ig" v-model="contact.instaHandle" />
+          </div>
+          <div class="social-div">
+            <button class="icon linkedinico"></button>
+            <input class="form-control" type="text" id="link" v-model="contact.linkedHandle" />
+          </div>
+          <div class="social-div">
+            <button class="icon twico"></button>
+            <input class="form-control" type="text" id="twi" v-model="contact.twitterHandle" />
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
 <script>
-import UserInput from "./UserInput";
 import firestore from "../db/index";
 export default {
   name: "AddContact",
@@ -84,11 +111,60 @@ export default {
     cancel() {
       this.$router.push("/");
     }
-  },
-  components: {
-    UserInput
   }
 };
 </script>
 <style>
+.container-add {
+  max-width: 80vw;
+  margin: auto;
+  margin-top: 10px;
+}
+.add-contact {
+  padding: 10px;
+  height: 30vh;
+}
+.add-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.form-div {
+  flex: 1;
+  max-width: 70vh;
+  margin: 10px 10px;
+  display: flex;
+}
+.social {
+  margin-top: 10px;
+}
+.social-div {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 5px;
+}
+.social-div button {
+  margin-right: 5px;
+  width: 50px;
+}
+.form-div-address {
+  width: 80vw;
+  margin: 10px 10px;
+  display: flex;
+}
+.ion {
+  padding: 2px;
+  font-size: 20px;
+  color: rgb(129, 170, 16);
+}
+@media only screen and (max-width: 500px) {
+  .title {
+    font-size: 30px;
+  }
+
+  .add-form {
+    flex-direction: column;
+  }
+}
 </style>

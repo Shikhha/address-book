@@ -1,13 +1,20 @@
 <template>
   <div>
-    <div class="contact-list-item row p-md-3 text-center text-md-justify">
-      <div class="contact-name-item col-12 col-md-4">{{contact.name}}</div>
-      <div class="contact-email-item col-12 col-md-4">{{contact.email}}</div>
-      <div class="contact-phone-item col-12 col-md-4">{{contact.phone}}</div>
-      <button @click="$emit('getDetails')">view</button>
-      <br />
-      <button @click="deleteContact">delete contact</button>
-      <button @click="updateContact">update contact</button>
+    <div class="contact-list-item">
+      <div class="contact-name-item">{{contact.name}}</div>
+      <div class="contact-email-item">{{contact.email}}</div>
+      <div class="contact-phone-item">{{contact.phone}}</div>
+      <div class="options-panel">
+        <button @click="$emit('getDetails')" class="ion-btn">
+          <i class="material-icons">touch_app</i>
+        </button>
+        <button @click="deleteContact" class="ion-btn">
+          <i class="material-icons">highlight_off</i>
+        </button>
+        <button @click="updateContact" class="ion-btn">
+          <i class="material-icons">create</i>
+        </button>
+      </div>
     </div>
   </div>
 </template>

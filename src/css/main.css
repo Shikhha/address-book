@@ -1,10 +1,40 @@
 body {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0.781),
+    rgba(246, 116, 9, 0.787)
+  );
+}
+
+.navbar-custom {
+  display: flex;
+  justify-content: flex-start;
+  background-color: rgb(226, 68, 5);
+  padding-top: 10px;
+}
+.navbar-ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar-ul li {
+  padding: 0px 5px;
+  margin: 0px 2px;
+  align-self: center;
+  font-size: 16px;
+  border-radius: 5%;
+  color: whitesmoke;
+  font-weight: bolder;
+}
+
+.navbar-ul li:hover {
+  transform: translateY(-2px);
 }
 
 #addressbook-app {
-  height: 90vh;
+  height: 83vh;
   margin-top: 30px;
   background-color: #fafafa;
   border: 1px solid rgba(255, 0, 0, 0.3);
@@ -12,40 +42,37 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.underline {
+  width: 60vw;
+  height: 5px;
+  margin: auto;
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.add-box {
+  display: flex;
+  justify-content: flex-end;
+}
 
 #title {
   font-size: 48px;
   font-weight: 100;
-
   padding: 0px;
-}
-
-.offline-note {
-  position: absolute;
-  background-color: rgb(200, 0, 0);
-  color: #fff;
-  padding: 5px;
-  font-weight: bold;
-  top: 35px;
-  left: 380px;
-  font-size: 12px;
-  transition: opacity 500ms;
 }
 
 /* Homepage */
 #addContactBtn {
-  position: absolute;
+  margin-top: 10px;
   width: 36px;
   height: 36px;
   background: url("../assets/add-contact-btn.svg");
   background-size: 36px 36px;
-  top: 23px;
-  right: 31px;
 }
 
 #list {
   margin-top: 15px;
   width: 100%;
+  max-height: 60vh;
   background-color: #fff;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -84,111 +111,66 @@ body {
 }
 
 /* Add Contact */
-#cancelBtn {
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  background: url("../assets/cancel-btn.svg");
-  background-size: 36px 36px;
-  top: 23px;
-  right: 31px;
-  outline: none;
-}
-
-#saveBtn {
-  width: 36px;
-  height: 36px;
-  background: url("../assets/save-new-contact-btn.svg");
-  background-size: 36px 36px;
-  top: 23px;
-  right: 74px;
-  outline: none;
-  z-index: 1;
-}
-
-.inputBoxFull {
-  font-size: 26px;
-  font-family: "Raleway", sans-serif;
-  outline: none;
-  border: none;
-  transition: border-right 300ms;
-}
-
 .add-form {
-  width: 60%;
-  margin: auto;
-}
-
-.row-full {
-}
-
-.inputBoxHalf {
-  font-size: 26px;
-  font-family: "Raleway", sans-serif;
-  border: none;
-  outline: none;
-  box-sizing: border-box;
-  transition: border-right 300ms;
-}
-
-.iconpadding {
-  padding-left: 60px;
-}
-
-textarea {
-  font-family: "Raleway", sans-serif;
-  outline: none;
-  border: 1px solid rgba(151, 151, 151, 0.24);
-  resize: none;
-}
-
-.invalidForm {
-  border-right: 4px solid rgba(255, 0, 0, 0.3);
-}
-
-.row-half {
-}
-
-.col-stack > .inputBoxHalf {
-  padding-left: 60px;
-  width: 525px;
-  box-sizing: border-box;
-}
-
-.icon {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  z-index: 1;
 }
 
 /* ContactListItem */
 .contact-list-item {
+  display: flex;
+  justify-content: space-between;
   box-sizing: border-box;
   border: 1px solid rgba(151, 151, 151, 0.13);
   cursor: pointer;
   background-color: #f8fbf4;
+  padding: 15px;
   transition: background-color 500ms;
 }
 
 .contact-list-item:hover {
-  background-color: #e4f3d5;
+  background-color: #e4f3d59d;
 }
 
 .contact-name-item {
+  align-self: center;
   font-size: 26px;
 }
 
 .contact-email-item {
+  align-self: center;
   font-size: 18px;
-
-  color: #4990e2;
+  color: #10c55c;
 }
 
 .contact-phone-item {
+  align-self: center;
   font-size: 18px;
+  color: #10c55c;
+}
+.options-panel {
+  align-self: center;
+  display: flex;
+}
+.ion-btn {
+  padding: 4px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  display: none;
+  color: rgb(171, 223, 27);
+}
+.ion-btn:focus {
+  outline: none;
+}
+.ion-btn:active {
+  transform: translateY(2px);
+}
 
-  color: #4990e2;
+.contact-list-item:hover .ion-btn {
+  display: block;
 }
 
 /*Contact Detail*/
@@ -207,14 +189,6 @@ textarea {
   top: 23px;
   right: 74px;
   outline: none;
-}
-
-.detail-name {
-  position: absolute;
-  font-size: 60px;
-  font-weight: 300;
-  top: 27px;
-  left: 23px;
 }
 
 .detail-phone {
@@ -351,5 +325,15 @@ textarea {
 
 .linkedinico {
   background: url("../assets/linkedin-icon.svg");
-  background-size: 40px 40px;
+}
+
+.icon {
+  height: 40px;
+  width: 40px;
+}
+
+@media only screen and (max-width: 500px) {
+  #title {
+    font-size: 30px;
+  }
 }

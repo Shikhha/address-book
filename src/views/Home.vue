@@ -1,6 +1,5 @@
  <template>
   <div>
-    <router-link id="addContactBtn" to="/add" />
     <div class="container" id="list">
       <ContactListItem
         @getDetails="getDetails(contact['id'])"

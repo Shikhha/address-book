@@ -1,42 +1,70 @@
 <template>
   <div>
-    <h2>Update</h2>
-    <a href="#" v-on:click="save">update</a>
-    <button v-on:click="cancel">cancel</button>
-    <form>
-      <div>
-        <label for="name">Name:</label>
-        <input class="form-control" type="text" id="name" v-model="contact.name" />
-      </div>
-      <div>
-        <label for="mail">Email:</label>
-        <input class="form-control" type="text" id="mail" v-model="contact.email" />
-      </div>
-      <div>
-        <label for="phone">Phone:</label>
-        <input class="form-control" type="text" id="phone" v-model="contact.phone" />
-      </div>
-      <div>
-        <label for="address">Address:</label>
-        <input class="form-control" type="text" id="address" v-model="contact.address" />
-      </div>
-      <div>
-        <label for="fb">Facebook:</label>
-        <input class="form-control" type="text" id="fb" v-model="contact.facebook" />
-      </div>
-      <div>
-        <label for="ig">Instagram:</label>
-        <input class="form-control" type="text" id="ig" v-model="contact.instagram" />
-      </div>
-      <div>
-        <label for="link">Linkedin:</label>
-        <input class="form-control" type="text" id="link" v-model="contact.linkedin" />
-      </div>
-      <div>
-        <label for="twi">Twitter:</label>
-        <input class="form-control" type="text" id="twi" v-model="contact.twitter" />
-      </div>
-    </form>
+    <a href="#" v-on:click="save" class="ion">
+      <i class="material-icons">get_app</i>
+    </a>
+    <button v-on:click="cancel" class="ion">
+      <i class="material-icons">highlight_off</i>
+    </button>
+
+    <div class="container-add">
+      <form class="add-form">
+        <div class="form-div">
+          <input
+            placeholder="Name..."
+            class="form-control"
+            type="text"
+            id="name"
+            v-model="contact.name"
+          />
+        </div>
+        <div class="form-div">
+          <input
+            placeholder="Email..."
+            class="form-control"
+            type="text"
+            id="mail"
+            v-model="contact.email"
+          />
+        </div>
+        <div class="form-div">
+          <input
+            placeholder="Phone..."
+            class="form-control"
+            type="text"
+            id="phone"
+            v-model="contact.phone"
+          />
+        </div>
+        <div class="form-div-address">
+          <input
+            placeholder="Address..."
+            class="form-control"
+            type="text"
+            id="address"
+            v-model="contact.address"
+          />
+        </div>
+        <div class="social">
+          <div class="social-div">
+            <button class="icon fbico"></button>
+            <input class="form-control" type="text" id="fb" v-model="contact.facebook" />
+          </div>
+          <div class="social-div">
+            <button class="icon instaico"></button>
+            <input class="form-control" type="text" id="ig" v-model="contact.instagram" />
+          </div>
+          <div class="social-div">
+            <button class="icon linkedinico"></button>
+            <input class="form-control" type="text" id="link" v-model="contact.linkedin" />
+          </div>
+          <div class="social-div">
+            <button class="icon twico"></button>
+            <input class="form-control" type="text" id="twi" v-model="contact.twitter" />
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
