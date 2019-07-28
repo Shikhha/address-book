@@ -3,14 +3,14 @@
     <nav class="navbar-custom">
       <ul class="navbar-ul">
         <li>
-          <button>Log In</button>
+          <button @click="login">Log In</button>
         </li>
         <li>
-          <button>Sign Up</button>
+          <button @click="register">Register</button>
         </li>
         <li>Name</li>
         <li>
-          <button>Logout</button>
+          <button @click="logout">Logout</button>
         </li>
       </ul>
     </nav>
@@ -24,6 +24,33 @@
     </div>
   </div>
 </template>
+
+<script>
+import { auth } from "./db/index";
+export default {
+  name: "app",
+  data() {
+    return {
+      isLoggedIn: false,
+      currentUser: false
+    };
+  },
+  methods: {
+    login() {
+      this.$router.push("/login");
+    },
+    register() {
+      this.$router.push("/register");
+    },
+    logout() {
+      auth.signOut().then(() => {
+        this.$router.push("/login");
+      });
+    }
+  }
+};
+</script>
+
 
 <style>
 @import url("./css/main.css");
