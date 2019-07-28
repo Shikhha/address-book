@@ -7,6 +7,7 @@
         <input type="text" class="form-control" placeholder="Password.." v-model="password" />
         <button @click="login" class="btn btn-info">LOGIN</button>
       </form>
+      <h4 class="error-m" v-if="error">*The username or password doesn't match*</h4>
     </div>
   </div>
 </template>
@@ -18,16 +19,23 @@ export default {
   data() {
     return {
       email: "",
-      password: ""
+      password: "",
+      error: ""
     };
   },
   methods: {
     login(e) {
+      e.preventDefault();
+
       console.log("register");
-      auth.signInWithEmailAndPassword(this.email, this.password).then(user => {
-        this.$router.push("/");
-        console.log(user);
-      });
+      auth
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(user => {
+          this.$router.go({ path: this.$router.path });
+        })
+        .catch(e => {
+          this.error = e;
+        });
     }
   }
 };
@@ -64,6 +72,12 @@ export default {
   flex: 0 0 30px;
   margin: auto;
   margin-top: 10px;
+}
+.error-m {
+  color: red;
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: center;
 }
 @media only screen and (max-width: 500px) {
   .container-login {

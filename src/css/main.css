@@ -9,12 +9,16 @@ body {
 }
 
 .navbar-custom {
+  height: 40px;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: flex-start;
   background-color: rgb(226, 68, 5);
-  padding-top: 10px;
 }
 .navbar-ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
   display: flex;
 }
@@ -22,8 +26,9 @@ body {
 .navbar-ul li {
   padding: 0px 5px;
   margin: 0px 2px;
-  align-self: center;
+  align-self: stretch;
   font-size: 16px;
+  display: flex;
   border-radius: 5%;
   color: whitesmoke;
   font-weight: bolder;
@@ -31,6 +36,25 @@ body {
 
 .navbar-ul li:hover {
   transform: translateY(-2px);
+  background: rgb(155, 49, 8);
+}
+.navbar-ul li:focus {
+  background: rgb(155, 49, 8);
+}
+
+.navbar-ul button {
+  align-self: stretch;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+.navbar-ul button:focus {
+  outline: 0;
+  background: rgb(155, 49, 8);
+}
+
+.user-email {
+  pointer-events: none;
+  align-self: center !important;
 }
 
 #addressbook-app {

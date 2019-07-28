@@ -8,7 +8,7 @@
         <li v-if="!isLoggedIn">
           <button @click="register">Register</button>
         </li>
-        <li v-if="currentUser">{{currentUser}}</li>
+        <li class="user-email" v-if="currentUser">{{currentUser}}</li>
         <li v-if="isLoggedIn">
           <button @click="logout">Logout</button>
         </li>
