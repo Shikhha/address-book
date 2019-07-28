@@ -83,12 +83,14 @@ router.beforeEach((to, from, next) => {
   } else if (to.matched.some(record => record.meta.requiresGuest)) {
     if (auth.currentUser) {
       next({
-        path: "/login",
+        path: "/",
         query: {
           redirect: to.fullPath
         }
       });
     } else {
+      console.log("login");
+      console.log(auth.currentUser);
       next();
     }
   } else {

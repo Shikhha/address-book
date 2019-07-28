@@ -3,7 +3,7 @@ import vue from "vue";
 import * as Firebase from "firebase";
 import "firebase/firestore";
 require("firebase/auth");
-const config = {
+export const config = {
   apiKey: "AIzaSyC2NtehlwBqQZXc7IADvxGCGpxYb8Hy9Wo",
   authDomain: "address-book-vue.firebaseapp.com",
   databaseURL: "https://address-book-vue.firebaseio.com",
