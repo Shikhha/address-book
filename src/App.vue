@@ -2,14 +2,14 @@
   <div>
     <nav class="navbar-custom">
       <ul class="navbar-ul">
-        <li>
+        <li v-if="!isLoggedIn">
           <button @click="login">Log In</button>
         </li>
-        <li>
+        <li v-if="!isLoggedIn">
           <button @click="register">Register</button>
         </li>
-        <li>Name</li>
-        <li>
+        <li v-if="currentUser">{{currentUser}}</li>
+        <li v-if="isLoggedIn">
           <button @click="logout">Logout</button>
         </li>
       </ul>
@@ -35,6 +35,12 @@ export default {
       currentUser: false
     };
   },
+  created() {
+    if (auth.currentUser) {
+      this.isLoggedIn = true;
+      this.currentUser = auth.currentUser.email;
+    }
+  },
   methods: {
     login() {
       this.$router.push("/login");
@@ -45,6 +51,8 @@ export default {
     logout() {
       auth.signOut().then(() => {
         this.$router.push("/login");
+        this.currentUser = false;
+        this.isLoggedIn = false;
       });
     }
   }
