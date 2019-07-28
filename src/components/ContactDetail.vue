@@ -107,9 +107,6 @@ export default {
 @media only screen and (max-width: 500px) {
   .social-details {
     margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
   }
   .details {
     justify-content: stretch;
