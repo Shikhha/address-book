@@ -30,7 +30,7 @@ export default {
       auth
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(user => {
-          this.$router.go({ path: this.$router.path });
+          this.$router.push("/");
         })
         .catch(e => {
           this.error = e;

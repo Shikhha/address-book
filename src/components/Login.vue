@@ -26,12 +26,10 @@ export default {
   methods: {
     login(e) {
       this.error = "";
-      e.preventDefault();
-      console.log("register");
       auth
         .signInWithEmailAndPassword(this.email, this.password)
         .then(user => {
-          this.$router.go({ path: this.$router.path });
+          this.$router.push("/");
         })
         .catch(e => {
           this.error = e;
