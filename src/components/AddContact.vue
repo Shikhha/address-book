@@ -136,6 +136,32 @@ export default {
   margin: 10px 10px;
   display: flex;
 }
+
+.form-div input {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+.form-div input:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}
+.social-div input {
+  margin-left: 5px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+.social-div input:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}
+.form-div-address input {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+.form-div-address input:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}
 .social {
   margin-top: 10px;
 }

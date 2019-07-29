@@ -7,6 +7,7 @@
         <input type="text" v-model="password" class="form-control" placeholder="Password.." />
         <button @click="register" class="btn btn-primary">Register</button>
       </form>
+      <h4 class="error-m" v-if="error">{{error}}</h4>
     </div>
   </div>
 </template>
@@ -19,18 +20,20 @@ export default {
   data() {
     return {
       email: "",
-      password: ""
+      password: "",
+      error: ""
     };
   },
   methods: {
     register(e) {
-      console.log("register");
       e.preventDefault();
       auth
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(user => {
-          alert("registered");
-          console.log(user);
+          this.$router.go({ path: this.$router.path });
+        })
+        .catch(e => {
+          this.error = e;
         });
     }
   }
