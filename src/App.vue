@@ -36,6 +36,13 @@ export default {
     };
   },
   created() {
+    auth
+      .signInWithEmailAndPassword("testing@gmail.com", "testing")
+      .then(user => {
+        this.isLoggedIn = true;
+        this.currentUser = auth.currentUser.email;
+        this.$router.push("/");
+      });
     if (auth.currentUser) {
       this.isLoggedIn = true;
       this.currentUser = auth.currentUser.email;
